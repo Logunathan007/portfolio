@@ -1,10 +1,17 @@
 import React from 'react'
 import '../../App.css'
+import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 
-const VerticalLine = () => {
+
+const VerticalLine = ({leftHide,setLeftHide}) => {
   return (
-    <div className='verticalline'>
-        <div className='arrowbox'> </div>
+    <div className={`verticalline ${leftHide?'goleft':'goright'}`}>
+        <div className='arrowbox' onClick={()=>{
+          setLeftHide(!leftHide);
+          
+        }}> 
+          {(leftHide)?<FaArrowRight />:<FaArrowLeft />}
+        </div>
         <div className="vline"> </div>
     </div>
   )

@@ -1,10 +1,20 @@
 import React from 'react'
-import '../../App.css'
+import About from '../About/About'
+import Education from '../Education/Education'
+import Contact from '../Contact/Contact'
+import Experience from '../Experience/Experience'
+import Projects from '../Projects/Projects'
+import Skills from '../Skills/Skills'
 
-const RightSection = () => {
+const RightSection = ({leftHide,setLeftHide}) => {
   return (
-    <div className='rightsection'>
-        RightSection
+    <div className={`rightsection ${(leftHide?"rfull":"rhalf")}`}>
+        <About/>
+        <Education/>
+        <Experience/>
+        <Skills/>
+        <Projects/>
+        <Contact/>
     </div>
   )
 }
