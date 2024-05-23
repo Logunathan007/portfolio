@@ -9,7 +9,10 @@ import Skills from '../Skills/Skills'
 const RightSection = ({leftHide,setLeftHide}) => {
   return (
     <div className={`rightsection ${(leftHide?"rfull":"rhalf")}`}>
-        <About/>
+        <About
+          leftHide = {leftHide}
+          setLeftHide = {setLeftHide}        
+        />
         <Education/>
         <Experience/>
         <Skills/>
