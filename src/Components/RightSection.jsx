@@ -1,10 +1,10 @@
 import React from 'react'
-import About from '../About/About'
-import Education from '../Education/Education'
-import Contact from '../Contact/Contact'
-import Experience from '../Experience/Experience'
-import Projects from '../Projects/Projects'
-import Skills from '../Skills/Skills'
+import About from './About'
+import Education from './Education'
+import Contact from './Contact'
+import Experience from './Experience'
+import Projects from './Projects'
+import Skills from './Skills'
 
 const RightSection = ({leftHide,setLeftHide}) => {
   return (

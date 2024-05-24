@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import './App.css';
-import LeftSection from './Components/LeftSection/LeftSection';
-import RightSection from './Components/RightSection/RightSection';
-import VerticalLine from './Components/VerticalLine/VerticalLine';
+import LeftSection from './Components/LeftSection';
+import RightSection from './Components/RightSection';
+import VerticalLine from './Components/VerticalLine';
 
 function App() {
   
@@ -21,6 +21,7 @@ function App() {
         leftHide = {leftHide}
         setLeftHide = {setLeftHide}
       />
+      
     </div>
     
   );

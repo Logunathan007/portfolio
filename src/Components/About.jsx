@@ -11,10 +11,10 @@ const About = ({leftHide,setLeftHide}) => {
           </div>
         </div>
         <div className="col2">
-          <h2>SOFTWARE DEVLOPER<div className="hline"></div></h2>
-          
+          <h2>LOGUNATHAN J<div className="hline"></div></h2>
+          <h3>SOFTWARE DEVELOPER</h3>
           <div className='description'>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque labore autem dicta rerum non itaque fuga odit! Dolorem fuga, inventore quia, laudantium quibusdam ipsum numquam, dignissimos fugit nam repellat modi?
+            Dynamic and versatile software developer with proficiency in HTML, CSS, JavaScript, ReactJS, C, Java, Python, and SQL. Possessing a solid foundation in computer science principles and programming languages, I am adept at developing and implementing efficient solutions to complex problems.
           </div>
         </div>  
       </div>
