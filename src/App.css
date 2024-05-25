@@ -4,8 +4,12 @@
   box-sizing: border-box;
   scroll-behavior:smooth;
 }
-:root {
-  --min-height: 100vh;
+:root{
+  --clr-violet: #7334d1;
+  --clr-blue: #00c4ff;
+  --dark-bg: #070a13;
+  --light-bg: hsla(0,0%,96%,.993);
+  --transition: all 0.3s linear;
 }
 .App {
   display:flex;
@@ -66,7 +70,7 @@
 }
 
 .vline{
-  height: 90%;
+  height: 90vh;
   position: absolute;
   bottom: 0px;
   width: 10px;
@@ -111,20 +115,21 @@
 }
 
 .contentbox{
-  background-color: rgb(174, 105, 238);
   position: relative;
   margin:3% 0px;
-  width: 90%;
-  min-height: 100vh;
+  width: 95%;
+  min-height:fit-content;
   height: auto; 
   box-sizing: border-box;
 } 
 
 .contentbox h1{
+  padding-top: 20px;
   margin:15px 0px;
-  height: 50px;
+  height: fit-content;
   text-align: center;
-  /* font-size: 3em; */
+  border-top: 10px solid black;
+  font-size: 3em;
 }
 
 .col2 h2{
@@ -150,6 +155,7 @@
   text-align: justify;
   text-indent: 2em;
   font-weight: 30px;
+  margin-bottom: 20px;
 }
 .col2 .hline{
   margin-bottom: 20px !important;
@@ -173,14 +179,33 @@
   width:80%;
   padding:5%;
   border: 15px solid black;
-  box-shadow: 25px 25px 10px #ffe602, -25px -25px 10px #ffe602;
+  box-shadow: 25px 25px 10px var(--clr-blue), -25px -25px 10px var(--clr-blue);
 }
 .about{
   min-height:80%;
   display: flex;
   align-items: center;
 }
-
+.button a{
+  width: fit-content;
+  height: fit-content;
+}
+.button span{
+  margin-right: 10px;
+}
+.button button{
+  background-color: var(--clr-blue);
+  width: 100px;
+  min-height: 30px;
+  border: none;
+  font-weight: bold;
+  border-radius: 5px;
+}
+.button button:hover {
+  transition: var(--transition);
+  box-shadow: 0 0 25px 5px var(--clr-blue);
+  transform: translateY(-2px);
+}
 
 .col1{
   display: grid;
@@ -327,8 +352,8 @@
 }
 .contactbox{
   width: clamp(60%,90%,80%);
-  margin:0px auto 20px auto;
-  height: fit-content;
+  margin:20px auto 40px auto;
+  height:65vh;
   display: flex;
 }
 .contactleft{
@@ -363,13 +388,34 @@
   height: 300px;
   border-radius: 50%;
 }
-.link{
+a .link{
+  border:none;
+  border-radius: 50%;
   width: 50px;
   height: 50px;
-  color: black;
-  font-weight: bolder;
-  font-size: 49px;
+  display:grid;
+  place-items: center;
   cursor: pointer;
+}
+.link svg{
+  width: 32px;
+  height: 32px;
+
+}
+.link:hover {
+  transition: var(--transition);
+  background-color: var(--clr-blue);
+  color:var(--light-bg);
+  box-shadow: 0 0 25px 5px var(--clr-blue);
+  transform: translateY(-2px);
+}
+
+
+.button button{
+  font-size: 16px;
+  padding:5px 8px;
+  height:fit-content;
+  cursor:pointer;
 }
 
 ::-webkit-scrollbar {
@@ -386,3 +432,5 @@
   background: #ffe602; 
   border-radius: 5px;
 }
+
+

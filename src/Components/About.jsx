@@ -1,6 +1,9 @@
 import React from 'react'
+import Button from './Button'
+
 
 const About = ({leftHide,setLeftHide}) => {
+  
   return (
     <div className='about contentbox' id='about'>
       <div className="window">
@@ -16,9 +19,9 @@ const About = ({leftHide,setLeftHide}) => {
           <div className='description'>
             Dynamic and versatile software developer with proficiency in HTML, CSS, JavaScript, ReactJS, C, Java, Python, and SQL. Possessing a solid foundation in computer science principles and programming languages, I am adept at developing and implementing efficient solutions to complex problems.
           </div>
+          <Button/>
         </div>  
       </div>
-      
     </div>
   )
 }

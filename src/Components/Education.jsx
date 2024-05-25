@@ -32,9 +32,9 @@ const Education = () => {
       <div className="details">
         <div className="detailbox">
           {
-            educationDetails.map((ele)=>{
+            educationDetails.map((ele,ind)=>{
               return(
-                <div className="row">
+                <div className="row" key ={ind}>
                   <h3> {ele.line1} </h3>
                   <h4> {ele.line2} </h4>
                   <h4> {ele.line3} </h4>
