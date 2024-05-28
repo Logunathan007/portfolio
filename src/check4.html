@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: grid;
+            place-items: center;
+            width: 100vw;
+            background-color: black;
+            height: 100vh;
+        }
+        .box {
+            width: 300px;
+            height: 500px;
+            background-color: lightslategrey;
+            position: relative;
+        }
+        .box::after {
+            content: "hi";
+            background-color: white;
+            position: absolute;
+            width: 50%;
+            top: -35%;
+            height: 150%;
+            z-index: -1;
+            overflow: hidden;
+            transition: .3s;
+            animation: animate 2s ease-in-out infinite;
+        }
+        .box::before {
+            content: "";
+            position: absolute;
+            top: -2%;
+            left: -2%;
+            background-color: red;
+            width: 104%;
+            height: 104%;
+            z-index: -2;
+            overflow: hidden;
+        }
+        
+        @keyframes animate {
+            0% {
+                transform: rotate(95deg);
+            }
+            25% {
+                transform: rotate(180deg);
+            }
+            50% {
+                transform: rotate(270deg);
+            }
+            100% {
+                transform: rotate(deg);
+            }
+        } 
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

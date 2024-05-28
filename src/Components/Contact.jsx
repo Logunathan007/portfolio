@@ -1,7 +1,6 @@
 import React from 'react'
 import { ImMail4 } from "react-icons/im";
 import { VscGithub } from "react-icons/vsc";
-import { IoLogoLinkedin } from "react-icons/io5";
 const Contact = () => {
   return (
     <div className='contact contentbox' id = 'contact'>

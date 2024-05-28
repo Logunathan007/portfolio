@@ -4,6 +4,7 @@
   box-sizing: border-box;
   scroll-behavior:smooth;
 }
+
 :root{
   --clr-violet: #7334d1;
   --clr-blue: #00c4ff;
@@ -177,10 +178,44 @@
 }
 .imgboxlayer{
   width:80%;
-  padding:5%;
+  padding:3%;
   border: 15px solid black;
-  box-shadow: 25px 25px 10px var(--clr-blue), -25px -25px 10px var(--clr-blue);
+  overflow: hidden;
+  /* box-shadow: 25px 25px 10px var(--clr-blue), -25px -25px 10px var(--clr-blue); */
 }
+.imgbox{
+  width:100%;
+  height:100%;
+  border: 1px solid black;
+  background-color: white;
+  position: relative;
+}
+.imgbox::before{
+  content: "";
+  position:absolute;
+  top:-40%;
+  left:20%;
+  rotate: 35deg;
+  background-color: var(--clr-blue);
+  width:60%;
+  height: 180%;
+  z-index: -1;
+  animation: imgboxani1 2s linear infinite;
+}
+.imgbox:hover::before{
+  animation: imgboxani1 1s linear infinite;
+}
+
+@keyframes imgboxani1 {
+  0%{
+    rotate: 0deg;
+  }
+  100%{
+    rotate: 360deg;
+  }
+}
+
+
 .about{
   min-height:80%;
   display: flex;
@@ -193,16 +228,20 @@
 .button span{
   margin-right: 10px;
 }
-.button button{
-  background-color: var(--clr-blue);
+.button button{  
+  font-size: 16px;
+  padding:5px 8px;
+  background-color: inherit;
+  cursor:pointer;
+  border:1px solid var(--clr-blue);
   width: 100px;
   min-height: 30px;
-  border: none;
   font-weight: bold;
   border-radius: 5px;
 }
 .button button:hover {
   transition: var(--transition);
+  background-color: var(--clr-blue);
   box-shadow: 0 0 25px 5px var(--clr-blue);
   transform: translateY(-2px);
 }
@@ -216,11 +255,6 @@
   width: 60%;
   display: flex;
   flex-direction: column;
-}
-.imgbox{
-  width:100%;
-  height:100%;
-  border: 1px solid black;
 }
 
 .details{
@@ -290,6 +324,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* transform:rotate(360deg);
+  transition: transform 0.4s cubic-bezier(.68,-0.55,.27,1.55) 0s; */
   justify-content: space-around;
 }
 
@@ -386,6 +422,7 @@
 .contactimg{
   width: 300px;
   height: 300px;
+  background-color: var(--clr-blue);
   border-radius: 50%;
 }
 a .link{
@@ -393,6 +430,7 @@ a .link{
   border-radius: 50%;
   width: 50px;
   height: 50px;
+  background-color: inherit;
   display:grid;
   place-items: center;
   cursor: pointer;
@@ -400,7 +438,6 @@ a .link{
 .link svg{
   width: 32px;
   height: 32px;
-
 }
 .link:hover {
   transition: var(--transition);
@@ -411,12 +448,7 @@ a .link{
 }
 
 
-.button button{
-  font-size: 16px;
-  padding:5px 8px;
-  height:fit-content;
-  cursor:pointer;
-}
+
 
 ::-webkit-scrollbar {
   width: 5px; 

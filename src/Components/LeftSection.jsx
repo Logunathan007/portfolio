@@ -4,22 +4,22 @@ const LeftSection = ({leftHide,setLeftHide}) => {
   return (
     <div className={`leftsection ${leftHide ? 'full' : 'half'}`}>
         <div className="navbtn" >
-          <a href="#about">ABOUT</a>
+          <a href="#about" className='navlink'>ABOUT</a>
         </div>
         <div className="navbtn">
-          <a href="#education">EDUCATION</a>          
+          <a href="#education" className='navlink'>EDUCATION</a>          
         </div>
         <div className="navbtn">
-          <a href="#experience">EXPERIENCE</a>
+          <a href="#experience" className='navlink'>EXPERIENCE</a>
         </div>
         <div className="navbtn">
-          <a href="#skills">SKILLS</a>          
+          <a href="#skills" className='navlink'>SKILLS</a>          
         </div>
         <div className="navbtn">
-          <a href="#projects">PROJECTS</a>
+          <a href="#projects" className='navlink'>PROJECTS</a>
         </div>
         <div className="navbtn">
-          <a href="#contact">CONTACT</a>
+          <a href="#contact" className='navlink'>CONTACT</a>
         </div>
     </div>
   )
