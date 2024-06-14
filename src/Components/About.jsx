@@ -16,7 +16,7 @@ const About = ({leftHide,setLeftHide}) => {
         </div>
         <div className="col2">
           <h2 data-aos="fade-down" data-aos-duration="5000ms">LOGUNATHAN J<div className="hline"></div></h2>
-          <h3 data-aos="fade-left">SOFTWARE DEVELOPER</h3>
+          <h3 data-aos="fade-left" id='role'>SOFTWARE DEVELOPER</h3>
           <div data-aos="fade-up" className='description'>
             Dynamic and versatile software developer with proficiency in HTML, CSS, JavaScript, ReactJS, C, Java, Python, and SQL. Possessing a solid foundation in computer science principles and programming languages, I am adept at developing and implementing efficient solutions to complex problems.
           </div>

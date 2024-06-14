@@ -8,9 +8,8 @@ const VerticalLine = ({leftHide,setLeftHide}) => {
     <div className={`verticalline ${leftHide?'goleft':'goright'}`}>
         <div className='arrowbox' onClick={()=>{
           setLeftHide(!leftHide);
-          
         }}> 
-          {(leftHide)?<FaArrowRight />:<FaArrowLeft />}
+          {(leftHide)?<FaArrowRight className='arrows'/>:<FaArrowLeft className='arrows' />}
         </div>
         <div className="vline"> </div>
     </div>

@@ -1,28 +1,84 @@
-import React from 'react'
+import React, { useEffect, useState } from "react";
 
-const LeftSection = ({leftHide,setLeftHide}) => {
+const LeftSection = ({ leftHide, setLeftHide }) => {
+  const [active, setActive] = useState("about");
+
+  const scrollToSection = (section) => {
+    setActive(section);
+    const element = document.getElementById(section);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const detemineActiveSection = () => {
+    const ls = document.querySelectorAll(".contentbox");
+    ls.forEach((ele) => {
+      const rect = ele.getBoundingClientRect();
+      if (rect.top <= 120 && rect.bottom >= 120) {
+        setActive(ele.id);
+      }
+    });
+  };
+  useEffect(() => {
+    const r = document.getElementById("rightsection");
+    r.addEventListener("scroll", detemineActiveSection);
+    return () => {
+      r.removeEventListener("scroll", detemineActiveSection);
+    };
+  });
   return (
-    <div className={`leftsection ${leftHide ? 'full' : 'half'}`}>
-        <div className="navbtn" >
-          <a href="#about" className='navlink'>ABOUT</a>
+    <div className={`leftsection ${leftHide ? "full" : "half"}`}>
+      <div className="navbtn">
+        <div
+          onClick={() => scrollToSection("about")}
+          className={`navlink ${active === "about" ? "active" : ""}`}
+        >
+          ABOUT
         </div>
-        <div className="navbtn">
-          <a href="#education" className='navlink'>EDUCATION</a>          
+      </div>
+      <div className="navbtn">
+        <div
+          onClick={() => scrollToSection("education")}
+          className={`navlink ${active === "education" ? "active" : ""}`}
+        >
+          EDUCATION
         </div>
-        <div className="navbtn">
-          <a href="#experience" className='navlink'>EXPERIENCE</a>
+      </div>
+      <div className="navbtn">
+        <div
+          onClick={() => scrollToSection("experience")}
+          className={`navlink ${active === "experience" ? "active" : ""}`}
+        >
+          EXPERIENCE
         </div>
-        <div className="navbtn">
-          <a href="#skills" className='navlink'>SKILLS</a>          
+      </div>
+      <div className="navbtn">
+        <div
+          onClick={() => scrollToSection("skills")}
+          className={`navlink ${active === "skills" ? "active" : ""}`}
+        >
+          SKILLS
         </div>
-        <div className="navbtn">
-          <a href="#projects" className='navlink'>PROJECTS</a>
+      </div>
+      <div className="navbtn">
+        <div
+          onClick={() => scrollToSection("projects")}
+          className={`navlink ${active === "projects" ? "active" : ""}`}
+        >
+          PROJECTS
         </div>
-        <div className="navbtn">
-          <a href="#contact" className='navlink'>CONTACT</a>
+      </div>
+      <div className="navbtn">
+        <div
+          onClick={() => scrollToSection("contact")}
+          className={`navlink ${active === "contact" ? "active" : ""}`}
+        >
+          CONTACT
         </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default LeftSection
+export default LeftSection;
