@@ -10,7 +10,6 @@
   margin: 0px;
   box-sizing: border-box;
   background-color: var(--dark-bg);
-  scroll-behavior: smooth;
 }
 .arrows{
   font-size: 30px;

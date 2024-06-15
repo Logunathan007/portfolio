@@ -7,7 +7,7 @@ const LeftSection = ({ leftHide, setLeftHide }) => {
     setActive(section);
     const element = document.getElementById(section);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      element.scrollIntoView();
     }
   };
 
