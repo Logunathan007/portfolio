@@ -10,6 +10,9 @@ button {
     transform-style: preserve-3d;
     z-index: 10;
 }
+#about{
+    min-height:200vh;
+}
 button:before,
 button:after {
 content: '';
