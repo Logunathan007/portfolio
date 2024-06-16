@@ -10,8 +10,9 @@
   margin: 0px;
   box-sizing: border-box;
   background-color: var(--dark-bg);
+  scroll-behavior: smooth;
 }
-.arrows{
+.arrows {
   font-size: 30px;
   color: var(--clr-violet);
 }
@@ -36,7 +37,7 @@
   justify-content: space-around;
 }
 
-.leftsection .active{
+.leftsection .active {
   background-color: var(--clr-blue);
   color: var(--dark-bg);
 }
@@ -161,7 +162,7 @@
 }
 .col2 h3 {
   font-size: 30px;
-  color:var(--clr-blue) !important;
+  color: var(--clr-blue) !important;
 }
 .col2 {
   padding: 10px;
@@ -186,7 +187,7 @@
   font-family: "Times New Roman", Times, serif;
   width: 100px;
   height: 5px;
-  background-color: black;
+  background-color: var(--clr-violet);
   margin: 10px auto;
   margin-bottom: 50px;
 }
@@ -227,46 +228,72 @@
   animation: imgboxani1 1s linear infinite;
 }
 
-@keyframes imgboxani1 {
-  0% {
-    rotate: 0deg;
-  }
-  100% {
-    rotate: 360deg;
-  }
-}
-
 .about {
   min-height: 80%;
   display: flex;
   align-items: center;
 }
-#role{
+#role {
   color: var(--light-bg);
+}
+.button-wrapper button {
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  border: 0;
+  border-radius: 4px;
+  background-color: #00c4ff;
+  color: #070a13;
+  user-select: none;
+  font-size: 1rem;
+  transform-style: preserve-3d;
+  z-index: 10;
+}
+.button-wrapper button:before,
+.button-wrapper button:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  border-radius: 4px;
+  background-color: #00c4ff;
+  transform: translateZ(-5px);
+  z-index: 10;
+}
+
+.button-wrapper button:after {
+  background-color: #00c4ff;
+  transform: translateZ(-10px);
+  z-index: 10;
+}
+
+.button-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  background-color: black;
+  position: relative;
+  perspective: 400px;
+  z-index: 10;
 }
 .button a {
   width: fit-content;
   height: fit-content;
+  text-decoration: none !important;
+  color: white;
 }
 .button span {
   margin-right: 10px;
+  font-weight: 500;
+  font-size: 18px;
 }
-.button button {
-  font-size: 16px;
-  padding: 5px 8px;
-  background-color: inherit;
-  cursor: pointer;
-  border: 1px solid var(--clr-blue);
-  width: 100px;
-  min-height: 30px;
-  font-weight: bold;
-  border-radius: 5px;
-}
-.button button:hover {
-  transition: var(--transition);
-  background-color: var(--clr-blue);
-  box-shadow: 0 0 25px 5px var(--clr-blue);
-  transform: translateY(-2px);
+.button span:hover {
+  color: var(--clr-blue);
+  text-shadow: var(--clr-blue);
+  transition: all 0.3s linear;
 }
 
 .col1 {
@@ -284,26 +311,62 @@
   display: flex;
   margin: 10px auto;
 }
-
 .detailbox {
   flex: 1;
 }
+.details .detailimg {
+  flex: 1;
+  display: grid;
+  place-items: center;
+}
 
-.education .detailimg {
-  background: url("/src/pictures/boys-studying-online-unscreen.gif");
+.education .detailimg .imggif {
+  background-color: red;
+  border-radius: 4px;
+  width: clamp(90%, 95%, 100%);
+  min-height: clamp(80%, 90%, 100%);
+  background: url("/src/pictures/Education.gif");
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
 }
-
 .experience .detailimg {
   background: url("/src/pictures/rating-work-experience-unscreen.gif");
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
 }
+
+.detailimg {
+  flex: 1;
+  box-sizing: border-box;
+}
+.details .row {
+  width: 98%;
+  border-radius: 4px;
+  min-height: 120px;
+  max-height: fit-content;
+  margin: 0px auto;
+  padding: 20px;
+  background-color: var(--light-bg) !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.details .rowanim {
+  width: 80%;
+  border-radius: 4px;
+  min-height: fit-content;
+  margin: 20px auto;
+  background-color: var(--clr-blue);
+}
+.details .rowanim:hover{
+  animation: animate 2s linear infinite;
+}
 .details h3,
 h4 {
+  background-color: inherit !important;
+  color: var(--dark-bg);
   margin-bottom: 10px;
 }
 .details h3 {
@@ -312,34 +375,32 @@ h4 {
 .details h4 {
   font-size: 20px;
 }
-
-.detailimg {
-  flex: 1;
-  box-sizing: border-box;
-}
-.details .row {
-  width: 80%;
-  min-height: 120px;
-  max-height: fit-content;
-  margin: 20px auto;
-  padding: 20px;
-  background-color: lightgray;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  position: relative;
+sup {
+  background-color: inherit;
+  color: var(--dark-bg);
 }
 .details .exrow {
-  width: 80%;
+  width: 98%;
+  border-radius: 4px;
   min-height: 120px;
   max-height: fit-content;
-  margin: 20px auto;
+  margin: 0px auto;
   padding: 20px;
-  background-color: lightgray;
+  background-color: var(--light-bg) !important;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  position: relative;
+}
+.details .exrowanim {
+  width: 80%;
+  border-radius: 4px;
+  min-height: fit-content;
+  margin: 20px auto;
+  background-color: var(--clr-blue);
+}
+
+.details .exrowanim:hover{
+  animation: animate 2s linear infinite;
 }
 .skillposter {
   width: 100px;
@@ -484,4 +545,20 @@ a .link {
 ::-webkit-scrollbar-thumb {
   background: var(--clr-violet);
   border-radius: 5px;
+}
+
+@keyframes animate {
+  50% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+
+@keyframes imgboxani1 {
+  0% {
+    rotate: 0deg;
+  }
+  100% {
+    rotate: 360deg;
+  }
 }
