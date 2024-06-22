@@ -1,5 +1,5 @@
 import React from "react";
-
+import eximg from "../pictures/Experience.jpg";
 const Experience = () => {
   let experienceDetails = [
     {
@@ -21,7 +21,9 @@ const Experience = () => {
         <div className="hline"></div>
       </div>
       <div className="details">
-        <div className="detailimg"></div>
+        <div className="detailimg">
+          <img src={eximg} alt="logo" />
+        </div>
         <div className="detailbox">
           {experienceDetails.map((ele, ind) => {
             return (

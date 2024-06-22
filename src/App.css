@@ -10,7 +10,6 @@
   margin: 0px;
   box-sizing: border-box;
   background-color: var(--dark-bg);
-  scroll-behavior: smooth;
 }
 .arrows {
   font-size: 30px;
@@ -199,7 +198,7 @@
   gap: 20px;
 }
 .imgboxlayer {
-  width: clamp(70%,75%,80%);
+  width: clamp(70%, 75%, 80%);
   height: 100%;
   padding: 3%;
   border: 15px solid black;
@@ -240,13 +239,13 @@
 }
 .button-wrapper button {
   display: inline-block;
-  padding: 0.75rem 1.25rem;
+  padding: 0.5rem 1rem;
   border: 0;
   border-radius: 4px;
   background-color: #00c4ff;
   color: #070a13;
   user-select: none;
-  font-size: 1rem;
+  font-size: 1.2rem;
   transform-style: preserve-3d;
   z-index: 10;
 }
@@ -313,17 +312,21 @@
   display: flex;
   margin: 10px auto;
 }
-.detailbox {
-  flex: 1;
-}
-.details .detailimg {
-  flex: 1;
+.experience .detailimg{
+  width: 40%;
+  min-height: 300px;
+  border-radius: 10px;
   display: grid;
-  place-items: center;
+  place-items:center;
+  overflow: hidden;
 }
-
+.experience .detailimg img{
+  transition: all .5s linear;
+}
+.experience .detailimg img:hover{
+  transform: scale(1.1);
+}
 .education .detailimg .imggif {
-  background-color: red;
   border-radius: 4px;
   width: clamp(90%, 95%, 100%);
   min-height: clamp(80%, 90%, 100%);
@@ -334,7 +337,6 @@
 }
 
 .experience .detailimg {
-  background: url("/src/pictures/Experience.jpg");
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
@@ -363,11 +365,15 @@
   margin: 20px auto;
   background-color: var(--clr-blue);
 }
-.details .rowanim:hover{
+.details .rowanim:hover {
   animation: animate 2s linear infinite;
 }
-.details h3,
-h4 {
+.details h3 {
+  background-color: inherit !important;
+  color: var(--dark-bg);
+  margin-bottom: 10px;
+}
+.details h4 {
   background-color: inherit !important;
   color: var(--dark-bg);
   margin-bottom: 10px;
@@ -402,7 +408,7 @@ sup {
   background-color: var(--clr-blue);
 }
 
-.details .exrowanim:hover{
+.details .exrowanim:hover {
   animation: animate 2s linear infinite;
 }
 .skillposter {
@@ -412,8 +418,6 @@ sup {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* transform:rotate(360deg);
-  transition: transform 0.4s cubic-bezier(.68,-0.55,.27,1.55) 0s; */
   justify-content: space-around;
 }
 
@@ -423,10 +427,10 @@ sup {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  transition: all .2s;
 }
 .skillimg:hover {
-  transition: all 1s;
-  transform: translateY(-5px) scale(1.2);
+  transform: translateY(-5px) scale(1.1);
 }
 .skillbox {
   width: 80%;
@@ -434,7 +438,7 @@ sup {
   height: fit-content;
   display: flex;
   flex-wrap: wrap;
-  gap: 40px;
+  gap: 50px;
   justify-content: center;
 }
 .skillname {
@@ -442,37 +446,83 @@ sup {
   font-size: 18px;
   font-weight: bold;
 }
-
+.projectcards{
+  width: 80%;
+  height: fit-content;
+  margin: 0px auto;
+  display: flex;
+  flex-direction: column;
+}
 .projectcard {
   padding: 10px;
-  width: 90%;
+  width: 100%;
+  max-width: 900px;
   height: fit-content;
-  border: 1px solid black;
   margin: 20px auto;
   display: flex;
+  justify-content: space-around;
+  gap: 20px
 }
 .projectimg {
   width: clamp(200px, 100%, 350px);
-  /* min-width: 300px;
-  max-width: 250px; */
+  min-width: 200px;
   min-height: 200px;
   max-height: 200px;
+  margin: 20px 30px;
   border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: grey 0px 0px 25px 5px;
+  background-color: grey;
+  overflow: hidden;
+}
+.projectimg img{
+  transition:var(--transition);
+  border-radius: 10px;
+  background-position: center;
+}
+.projectimg img:hover{
+  transform: scale(1.2);
+  opacity: 0.5;
 }
 .left {
-  flex: 1;
+  width: 50%;
   display: grid;
   place-items: center;
 }
 .right {
+  width: 50%;
   padding: 10px;
   padding-left: 40px;
-  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   gap: 10px;
   box-sizing: border-box;
+}
+.projects > h2,
+h3,
+h4 {
+  color: var(--light-bg);
+}
+.but {
+  background-color: var(--clr-blue);
+  color: var(--light-bg);
+  padding: 0.4rem 0.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 5px;
+  box-shadow: 0 0 10px 2px var(--clr-blue);
+  border: none;
+  transition: var(--transition);
+}
+.but:hover {
+  background-color: var(--clr-blue);
+  color: var(--light-bg);
+  box-shadow: 0 0 25px 5px var(--clr-blue);
+  transform: translateY(-2px);
+  cursor: pointer;
 }
 .contactbox {
   width: clamp(60%, 90%, 80%);
@@ -555,7 +605,6 @@ a .link {
     filter: hue-rotate(360deg);
   }
 }
-
 
 @keyframes imgboxani1 {
   0% {
