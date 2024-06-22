@@ -199,9 +199,11 @@
   gap: 20px;
 }
 .imgboxlayer {
-  width: 80%;
+  width: clamp(70%,75%,80%);
+  height: 100%;
   padding: 3%;
   border: 15px solid black;
+  z-index: 1;
   overflow: hidden;
   /* box-shadow: 25px 25px 10px var(--clr-blue), -25px -25px 10px var(--clr-blue); */
 }
@@ -274,7 +276,6 @@
   align-items: center;
   justify-content: center;
   width: 90%;
-  background-color: black;
   position: relative;
   perspective: 400px;
   z-index: 10;
@@ -300,6 +301,7 @@
   display: grid;
   place-items: center;
   width: 40%;
+  z-index: 1;
 }
 .col2 {
   width: 60%;
@@ -330,8 +332,9 @@
   background-size: contain;
   background-repeat: no-repeat;
 }
+
 .experience .detailimg {
-  background: url("/src/pictures/rating-work-experience-unscreen.gif");
+  background: url("/src/pictures/Experience.jpg");
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;

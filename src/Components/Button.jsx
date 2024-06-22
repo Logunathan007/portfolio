@@ -14,7 +14,6 @@ const Button = () => {
     let left = button.getBoundingClientRect().left;
     let top = button.getBoundingClientRect().top;
     const changeOfsetLeftTop = (event) => {
-      console.log("onscrool trigered");
       left = button.getBoundingClientRect().left;
       top = button.getBoundingClientRect().top;
     };
@@ -27,19 +26,6 @@ const Button = () => {
       );
       const bx = left + button.offsetWidth / 2;
       const by = top + button.offsetHeight / 2;
-      console.log("leto", left, top);
-      console.log(
-        "left",
-        button.parentNode.offsetLeft,
-        button.offsetLeft,
-        button.offsetWidth
-      );
-      console.log(
-        "top",
-        button.parentNode.offsetTop,
-        button.offsetTop,
-        button.offsetHeight
-      );
       const dist = distanceBetween(event.clientX, event.clientY, bx, by) * 2;
       const angle = Math.atan2(event.clientY - by, event.clientX - bx);
 
@@ -56,6 +42,9 @@ const Button = () => {
       }px rgba(0,0,0,0.15)`;
     };
 
+    const abo = document.getElementById('about');
+    const resize = new ResizeObserver(changeOfsetLeftTop)
+    resize.observe(abo)
     document.addEventListener("mousemove", handleMouseMove);
     document.getElementById("rightsection").addEventListener("scroll", changeOfsetLeftTop);
     return () => {

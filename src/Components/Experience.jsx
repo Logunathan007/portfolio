@@ -25,8 +25,8 @@ const Experience = () => {
         <div className="detailbox">
           {experienceDetails.map((ele, ind) => {
             return (
-              <div className="exrowanim">
-                <div className="exrow" key={ind}>
+              <div className="exrowanim" key={ind}>
+                <div className="exrow" >
                   <h3> {ele.line1} </h3>
                   <h4> {ele.line2} </h4>
                   <h4> {ele.line3} </h4>

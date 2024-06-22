@@ -4,14 +4,10 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-import AOSInitializer from './Components/AOSInitializer';
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <AOSInitializer>
       <App />
-    </AOSInitializer>
   </React.StrictMode>
 );
 

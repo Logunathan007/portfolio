@@ -9,7 +9,7 @@ const About = ({leftHide,setLeftHide}) => {
       <div className="window">
         <div className="col1">
           
-          <div data-aos="fade-right" className="imgboxlayer" style={{ transition:'all 1s',height: `${(leftHide)?'120%':'100%'}` }}>
+          <div className="imgboxlayer" style={{ transition:'all 1s',height: `${(leftHide)?'120%':'100%'}` }}>
             <div className="imgbox">
             </div>
           </div>
