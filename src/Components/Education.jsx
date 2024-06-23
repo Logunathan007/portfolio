@@ -25,11 +25,11 @@ const Education = () => {
   return (
     <div className="education contentbox" id="education">
       <div className="title">
-        <h1> EDUCATION </h1>
+        <h1 data-aos="flip-right"> EDUCATION </h1>
         <div className="hline"></div>
       </div>
       <div className="details">
-        <div className="detailbox">
+        <div className="edudetailbox" data-aos="flip-right">
           {educationDetails.map((ele, ind) => {
             return (
               <div className="rowanim" key={ind}>
@@ -42,7 +42,7 @@ const Education = () => {
             );
           })}
         </div>
-        <div className="detailimg">
+        <div className="eduimgbox">
           <div className="imggif"></div>
         </div>
       </div>

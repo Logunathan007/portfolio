@@ -1,4 +1,4 @@
-import React from 'react';
+
 import About from './About';
 import Education from './Education';
 import Contact from './Contact';
@@ -7,7 +7,6 @@ import Projects from './Projects';
 import Skills from './Skills';
 
 const RightSection = ({ leftHide, setLeftHide }) => {
-
   return (
     <div id='rightsection' className={`rightsection ${leftHide ? "rfull" : "rhalf"}`}>
       <About

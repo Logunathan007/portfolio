@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Portfolio</title>
+    <style>
+      :root {
+        --common-color: black;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        width: 100vw;
+        height: 100vh;
+        display: grid;
+        place-items: center;
+        background-color:tomato;
+        animation: animatecolor 1s linear infinite;
+      }
+      @keyframes animatecolor {
+        50% {
+          filter: hue-rotate(360deg);
+        }
+      }
+      .box {
+        width: 500px;
+        height: 500px;
+        border: 1px solid black;
+        border-radius: 4px;
+        position: relative;
+      }
+      #topj {
+        background-color: var(--common-color);
+        width: 400px;
+        height: 20px;
+        position: absolute;
+        top: 50px;
+        left: 50px;
+        border: 1px solid black;
+        border-radius: 4px;
+      }
+      #centerj {
+        background-color: var(--common-color);
+        height: 350px;
+        width: 20px;
+        border: 1px solid black;
+        position: absolute;
+        top: 70px;
+        left: 240px;
+      }
+      #bottomj {
+        background-color: var(--common-color);
+        width: 190px;
+        height: 20px;
+        border: 1px solid black;
+        position: absolute;
+        left: 50px;
+        top: 400px;
+      }
+      #leftj {
+        background-color: var(--common-color);
+        width: 20px;
+        height: 250px;
+        border: 1px solid black;
+        position: absolute;
+        top: 145px;
+        left: 50px;
+      }
+      #bottoml {
+        background-color: var(--common-color);
+        width: 185px;
+        height: 20px;
+        border: 1px solid black;
+        position: absolute;
+        left: 50px;
+        top: 375px;
+      }
+      .siden {
+        background-color: var(--common-color);
+        width: 20px;
+        height: 250px;
+        border: 1px solid black;
+        border-radius: 4px;
+      }
+      .leftn {
+        position: absolute;
+        top: 145px;
+        left: 270px;
+      }
+      .rightn {
+        position: absolute;
+        top: 145px;
+        left: 430px;
+      }
+      #crossn {
+        background-color: var(--common-color);
+        width: 20px;
+        height: 290px;
+        border: 1px solid black;
+        position: absolute;
+        top: 125px;
+        left: 350px;
+        rotate: -34deg;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div id="topj"></div>
+      <div id="centerj"></div>
+      <div id="bottomj"></div>
+      <div id="leftj"></div>
+      <div id="bottoml"></div>
+      <div class="siden leftn"></div>
+      <div id="crossn"></div>
+      <div class="siden rightn"></div>
+    </div>
+  </body>
+</html>
